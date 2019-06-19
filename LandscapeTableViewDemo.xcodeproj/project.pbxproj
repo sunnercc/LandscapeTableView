@@ -13,10 +13,12 @@
 		A25133AF22BA5CE0000C08C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25133AE22BA5CE0000C08C3 /* Assets.xcassets */; };
 		A25133B222BA5CE0000C08C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25133B022BA5CE0000C08C3 /* LaunchScreen.storyboard */; };
 		A25133B522BA5CE0000C08C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A25133B422BA5CE0000C08C3 /* main.m */; };
+		A25133BD22BA5DF3000C08C3 /* LandscapeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = A25133BC22BA5DF3000C08C3 /* LandscapeTableView.m */; };
+		A25133C422BA6E0A000C08C3 /* LSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A25133C322BA6E0A000C08C3 /* LSCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A25133A222BA5CDF000C08C3 /* LandscapeTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandscapeTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25133A222BA5CDF000C08C3 /* LandscapeTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LandscapeTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25133A522BA5CDF000C08C3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A25133A622BA5CDF000C08C3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A25133A822BA5CDF000C08C3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -26,6 +28,10 @@
 		A25133B122BA5CE0000C08C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A25133B322BA5CE0000C08C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25133B422BA5CE0000C08C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A25133BB22BA5DF3000C08C3 /* LandscapeTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LandscapeTableView.h; sourceTree = "<group>"; };
+		A25133BC22BA5DF3000C08C3 /* LandscapeTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LandscapeTableView.m; sourceTree = "<group>"; };
+		A25133C222BA6E0A000C08C3 /* LSCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSCell.h; sourceTree = "<group>"; };
+		A25133C322BA6E0A000C08C3 /* LSCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +48,8 @@
 		A251339922BA5CDF000C08C3 = {
 			isa = PBXGroup;
 			children = (
-				A25133A422BA5CDF000C08C3 /* LandscapeTableView */,
+				A25133BE22BA5DFE000C08C3 /* LandscapeTableView */,
+				A25133A422BA5CDF000C08C3 /* LandscapeTableViewDemo */,
 				A25133A322BA5CDF000C08C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,23 +57,34 @@
 		A25133A322BA5CDF000C08C3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A25133A222BA5CDF000C08C3 /* LandscapeTableView.app */,
+				A25133A222BA5CDF000C08C3 /* LandscapeTableViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A25133A422BA5CDF000C08C3 /* LandscapeTableView */ = {
+		A25133A422BA5CDF000C08C3 /* LandscapeTableViewDemo */ = {
 			isa = PBXGroup;
 			children = (
 				A25133A522BA5CDF000C08C3 /* AppDelegate.h */,
 				A25133A622BA5CDF000C08C3 /* AppDelegate.m */,
 				A25133A822BA5CDF000C08C3 /* ViewController.h */,
 				A25133A922BA5CDF000C08C3 /* ViewController.m */,
+				A25133C222BA6E0A000C08C3 /* LSCell.h */,
+				A25133C322BA6E0A000C08C3 /* LSCell.m */,
 				A25133AB22BA5CDF000C08C3 /* Main.storyboard */,
 				A25133AE22BA5CE0000C08C3 /* Assets.xcassets */,
 				A25133B022BA5CE0000C08C3 /* LaunchScreen.storyboard */,
 				A25133B322BA5CE0000C08C3 /* Info.plist */,
 				A25133B422BA5CE0000C08C3 /* main.m */,
+			);
+			path = LandscapeTableViewDemo;
+			sourceTree = "<group>";
+		};
+		A25133BE22BA5DFE000C08C3 /* LandscapeTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A25133BB22BA5DF3000C08C3 /* LandscapeTableView.h */,
+				A25133BC22BA5DF3000C08C3 /* LandscapeTableView.m */,
 			);
 			path = LandscapeTableView;
 			sourceTree = "<group>";
@@ -74,9 +92,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A25133A122BA5CDF000C08C3 /* LandscapeTableView */ = {
+		A25133A122BA5CDF000C08C3 /* LandscapeTableViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A25133B822BA5CE0000C08C3 /* Build configuration list for PBXNativeTarget "LandscapeTableView" */;
+			buildConfigurationList = A25133B822BA5CE0000C08C3 /* Build configuration list for PBXNativeTarget "LandscapeTableViewDemo" */;
 			buildPhases = (
 				A251339E22BA5CDF000C08C3 /* Sources */,
 				A251339F22BA5CDF000C08C3 /* Frameworks */,
@@ -86,9 +104,9 @@
 			);
 			dependencies = (
 			);
-			name = LandscapeTableView;
+			name = LandscapeTableViewDemo;
 			productName = LandscapeTableView;
-			productReference = A25133A222BA5CDF000C08C3 /* LandscapeTableView.app */;
+			productReference = A25133A222BA5CDF000C08C3 /* LandscapeTableViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +123,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A251339D22BA5CDF000C08C3 /* Build configuration list for PBXProject "LandscapeTableView" */;
+			buildConfigurationList = A251339D22BA5CDF000C08C3 /* Build configuration list for PBXProject "LandscapeTableViewDemo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +136,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A25133A122BA5CDF000C08C3 /* LandscapeTableView */,
+				A25133A122BA5CDF000C08C3 /* LandscapeTableViewDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -142,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25133AA22BA5CDF000C08C3 /* ViewController.m in Sources */,
+				A25133BD22BA5DF3000C08C3 /* LandscapeTableView.m in Sources */,
 				A25133B522BA5CE0000C08C3 /* main.m in Sources */,
+				A25133C422BA6E0A000C08C3 /* LSCell.m in Sources */,
 				A25133A722BA5CDF000C08C3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LandscapeTableView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LandscapeTableViewDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LandscapeTableView/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LandscapeTableViewDemo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A251339D22BA5CDF000C08C3 /* Build configuration list for PBXProject "LandscapeTableView" */ = {
+		A251339D22BA5CDF000C08C3 /* Build configuration list for PBXProject "LandscapeTableViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A25133B622BA5CE0000C08C3 /* Debug */,
@@ -325,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A25133B822BA5CE0000C08C3 /* Build configuration list for PBXNativeTarget "LandscapeTableView" */ = {
+		A25133B822BA5CE0000C08C3 /* Build configuration list for PBXNativeTarget "LandscapeTableViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A25133B922BA5CE0000C08C3 /* Debug */,
