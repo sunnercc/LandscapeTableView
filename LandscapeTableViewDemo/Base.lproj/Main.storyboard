@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i1o-fH-NPS" customClass="LandscapeTableView">
-                                <rect key="frame" x="0.0" y="144" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="344" width="414" height="218"/>
                                 <color key="backgroundColor" red="0.45882352939999999" green="0.73333333329999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
                         </subviews>
@@ -27,8 +27,8 @@
                         <constraints>
                             <constraint firstItem="i1o-fH-NPS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7c2-ZN-wai"/>
                             <constraint firstItem="i1o-fH-NPS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BAo-6D-VxS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i1o-fH-NPS" secondAttribute="bottom" constant="100" id="DDQ-ml-TTI"/>
-                            <constraint firstItem="i1o-fH-NPS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="RVX-AD-frg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i1o-fH-NPS" secondAttribute="bottom" constant="300" id="DDQ-ml-TTI"/>
+                            <constraint firstItem="i1o-fH-NPS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="300" id="RVX-AD-frg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -10,8 +10,8 @@
 
 @implementation LSCell
 
-- (instancetype)init {
-    self = [super init];
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
         _titleLabel = [UILabel new];
         [self.contentView addSubview:_titleLabel];
@@ -21,7 +21,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    _titleLabel.center = self.contentView.center;
+    _titleLabel.frame = self.bounds;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
 }
 
 @end

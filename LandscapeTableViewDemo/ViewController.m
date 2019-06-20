@@ -13,7 +13,6 @@
 
 @interface ViewController () <LandscapeTableViewDataSource, LandscapeTableViewDelegate>
 @property (weak, nonatomic) IBOutlet LandscapeTableView *landscapeTableView;
-@property (nonatomic, strong) NSArray<NSString *> *datas;
 @end
 
 @implementation ViewController
@@ -21,29 +20,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    _datas = @[@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test",@"test"];
-    
     self.landscapeTableView.delegate = self;
     self.landscapeTableView.dataSource = self;
-    [self.landscapeTableView registerClass:[LSCell class] forCellReuseIdentifier:reuseID];
     [self.landscapeTableView reloadData];
 }
 
 #pragma mark LandscapeTableViewDataSource & LandscapeTableViewDelegate
 - (NSInteger)numberOfItemsInLandscapeTableView:(LandscapeTableView *)landscapeTableView {
-    return _datas.count;
+    return 100;
 }
 
 - (LandscapeTableViewCell *)landscapeTableView:(LandscapeTableView *)landscapeTableView cellForItem:(NSInteger)item {
-    LSCell *cell = (LSCell *)[landscapeTableView dequeueReuseableCellWithIdentifier:reuseID forItem:item];
+    LSCell *cell = (LSCell *)[landscapeTableView dequeueReuseableCellWithIdentifier:reuseID];
     if (!cell) {
         cell = [[LSCell alloc] initWithReuseIdentifier:reuseID];
     }
-    cell.titleLabel.text = _datas[item];
+    cell.titleLabel.text = [NSString stringWithFormat:@"%ld", item];
+    cell.contentView.backgroundColor = [UIColor redColor];
+    cell.contentView.layer.borderColor = [UIColor grayColor].CGColor;
+    cell.contentView.layer.borderWidth = 2;
+    NSLog(@"cell %@", cell);
     return cell;
 }
 - (CGFloat)landscapeTableView:(LandscapeTableView *)landscapeTableView widthForItem:(NSInteger)item {
-    return 30.f;
+    return 200.f;
 }
 - (void)landscapeTableView:(LandscapeTableView *)landscapeTableView didSelectForItem:(NSInteger)item {
     NSLog(@"%ld select", (long)item);

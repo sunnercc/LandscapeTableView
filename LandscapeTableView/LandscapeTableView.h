@@ -12,11 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class LandscapeTableView;
 @class LandscapeTableViewCell;
 
-@protocol LandscapeTableViewDelegate <NSObject>
+@protocol LandscapeTableViewDelegate <NSObject, UIScrollViewDelegate>
 @optional
 - (void)landscapeTableView:(LandscapeTableView *)landscapeTableView didSelectForItem:(NSInteger)item;
 - (void)landscapeTableView:(LandscapeTableView *)landscapeTableView didDeselectForItem:(NSInteger)item;
-
 @end
 
 @protocol LandscapeTableViewDataSource <NSObject>
@@ -24,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)numberOfItemsInLandscapeTableView:(LandscapeTableView *)landscapeTableView;
 - (LandscapeTableViewCell *)landscapeTableView:(LandscapeTableView *)landscapeTableView cellForItem:(NSInteger)item;
 - (CGFloat)landscapeTableView:(LandscapeTableView *)landscapeTableView widthForItem:(NSInteger)item;
-
 @end
 
 @interface LandscapeTableViewCell : UIView
@@ -36,8 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LandscapeTableView : UIScrollView
 @property (nonatomic, weak) id <LandscapeTableViewDelegate> delegate;
 @property (nonatomic, weak) id <LandscapeTableViewDataSource> dataSource;
-- (LandscapeTableViewCell *)dequeueReuseableCellWithIdentifier:(NSString *)identifier forItem:(NSUInteger)item;
-- (void)registerClass:(Class)cellClass forCellReuseIdentifier:(NSString *)identifier;
+- (LandscapeTableViewCell *)dequeueReuseableCellWithIdentifier:(NSString *)identifier;
 - (void)reloadData;
 @end
 
