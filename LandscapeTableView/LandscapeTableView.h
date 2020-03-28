@@ -28,12 +28,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface LandscapeTableViewCell : UIView
 @property (nonatomic, readonly, strong) UIView *contentView;
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
+
 - (instancetype)initWithReuseIdentifier:(nonnull NSString *)reuseIdentifier;
 @end
 
 @interface LandscapeTableView : UIScrollView
 @property (nonatomic, weak) id <LandscapeTableViewDelegate> delegate;
 @property (nonatomic, weak) id <LandscapeTableViewDataSource> dataSource;
+
 - (LandscapeTableViewCell *)dequeueReuseableCellWithIdentifier:(NSString *)identifier;
 - (void)reloadData;
 @end

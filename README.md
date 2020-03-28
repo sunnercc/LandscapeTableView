@@ -1,41 +1,43 @@
-an easy way to request authorization for iOS platform.
+an easy way to build landscape tableView for iOS platform.
 
-![demo](https://easyPermission.gif)
+![demo](https://landscapeTableView.gif)
 
-## supported permission privacy type
+## supported  LandscapeTableViewDelegate
 ``` objc 
-typedef NS_ENUM(NSUInteger, EasyPermissionPrivacyType) {
-    EasyPermissionPrivacyTypeCamera,
-    EasyPermissionPrivacyTypePhotoLibrary,
-    EasyPermissionPrivacyTypeMicrophone,
-    EasyPermissionPrivacyTypeLocationAlways,
-    EasyPermissionPrivacyTypeLocationWhenInUse,
-    EasyPermissionPrivacyTypeLocationAlwaysAndWhenInUse,
-    EasyPermissionPrivacyTypeContacts,
-    EasyPermissionPrivacyTypeReminders,
-    EasyPermissionPrivacyTypeCalendars,
-    EasyPermissionPrivacyTypeSiri,
-    EasyPermissionPrivacyTypeSpeechRecognition,
-    EasyPermissionPrivacyTypeMusic,
-    EasyPermissionPrivacyTypeMotion,
-    EasyPermissionPrivacyTypeBluetooth
-};
+@protocol LandscapeTableViewDelegate <NSObject, UIScrollViewDelegate>
+@optional
+- (void)landscapeTableView:(LandscapeTableView *)landscapeTableView didSelectForItem:(NSInteger)item;
+- (void)landscapeTableView:(LandscapeTableView *)landscapeTableView didDeselectForItem:(NSInteger)item;
+@end
 ```
 
-## supported authorization status
+## supported LandscapeTableViewDataSource
 ``` objc 
-typedef NS_ENUM(NSUInteger, EasyPermissionAuthorizationStatus) {
-    EasyPermissionAuthorizationStatusNotDetermined,
-    EasyPermissionAuthorizationStatusRestricted,
-    EasyPermissionAuthorizationStatusDenied,
-    EasyPermissionAuthorizationStatusAuthorized
-};
+@protocol LandscapeTableViewDataSource <NSObject>
+@required
+- (NSInteger)numberOfItemsInLandscapeTableView:(LandscapeTableView *)landscapeTableView;
+- (LandscapeTableViewCell *)landscapeTableView:(LandscapeTableView *)landscapeTableView cellForItem:(NSInteger)item;
+- (CGFloat)landscapeTableView:(LandscapeTableView *)landscapeTableView widthForItem:(NSInteger)item;
+@end
 ```
 
-## use methods
+## use methods of LandscapeTableViewCell
 ``` objc 
-+ (void)authorizationRequestWithPrivacyType:(EasyPermissionPrivacyType)privacyType handler:(void (^)(EasyPermissionAuthorizationStatus status))handler;
+@interface LandscapeTableViewCell : UIView
+@property (nonatomic, readonly, strong) UIView *contentView;
+@property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 
-+ (EasyPermissionAuthorizationStatus)getAuthorizationStatusWithPrivacyType:(EasyPermissionPrivacyType)privacyType;
+- (instancetype)initWithReuseIdentifier:(nonnull NSString *)reuseIdentifier;
+@end
+```
 
+## use methods of LandscapeTableView
+``` objc 
+@interface LandscapeTableView : UIScrollView
+@property (nonatomic, weak) id <LandscapeTableViewDelegate> delegate;
+@property (nonatomic, weak) id <LandscapeTableViewDataSource> dataSource;
+
+- (LandscapeTableViewCell *)dequeueReuseableCellWithIdentifier:(NSString *)identifier;
+- (void)reloadData;
+@end
 ```
